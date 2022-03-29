@@ -9,7 +9,6 @@ body{
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-    height: 100vh;
     background-color: #FDD7AA;
 }
 
@@ -18,11 +17,11 @@ main{
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    overflow-y: scroll;
     min-height: 200px;
     background-color: #FFA8A8;
     border-radius: 20px;
     padding: 50px;
+    margin-top: 50px;
 }
 h1{
     margin-bottom: 20px;
