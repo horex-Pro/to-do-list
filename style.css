@@ -18,6 +18,7 @@ main{
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
+    overflow-y: scroll;
     min-height: 200px;
     background-color: #FFA8A8;
     border-radius: 20px;
@@ -35,6 +36,9 @@ h1{
 
 .text-box{
     display: flex;
+}
+.task-wrapper{
+    width: 100%;
 }
 
 input{
