@@ -3,3 +3,107 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #FDD7AA;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+    background-color: #FFA8A8;
+    border-radius: 20px;
+    padding: 50px;
+}
+h1{
+    margin-bottom: 20px;
+}
+.box{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text-box{
+    display: flex;
+}
+
+input{
+    width: 100%;
+    background-color: #F6FFA4;
+    border: 0;
+    outline: 0;
+    padding: 10px;
+    border-radius: 10px;
+    border-top-right-radius:0;
+    border-bottom-right-radius:0;
+}
+
+i.fa-plus{
+    padding: 10px;
+    background-color: #B6FFCE;
+    border-top-right-radius:10px;
+    border-bottom-right-radius:10px;
+    cursor: pointer;
+}
+select{
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin-left: 10px;
+    position: relative;
+}
+.to-do{
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.action{
+    display: flex;
+    justify-content: space-between;
+    width: 80px;
+}
+.fa-check{
+    color: #B6FFCE;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+.fa-check:hover{
+    background-color: #B6FFCE;
+    color: #fff;
+}
+
+.fa-trash{
+    padding: 10px;
+    border-radius: 10px;
+    color: #FD5D5D;
+    transition: all 0.2s ease-in-out;
+}
+
+.fa-trash:hover{
+    background-color: #FD5D5D;
+    color: #fff;
+}
+.completed{
+    opacity: 0.8;
+}
+.completed .title{
+    text-decoration: line-through #FFA8A8 solid;
+}
