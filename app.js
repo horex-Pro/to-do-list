@@ -1,12 +1,17 @@
-let textbox = document.querySelector('.get-text');
-let addBtn = document.querySelector('.fa-plus');
-let taskWrapper = document.querySelector('.task-wrapper');
+const textbox = document.querySelector('.get-text');
+const addBtn = document.querySelector('.fa-plus');
+const taskWrapper = document.querySelector('.task-wrapper');
 
-let completeBtn = document.querySelector('.complete-btn');
+
+const completeBtn = document.querySelector('.complete-btn');
+
+const dropdown = document.querySelector('#filter');
 
 addBtn.addEventListener('click',addTask);
 
 taskWrapper.addEventListener('click',completeTask)
+
+dropdown.addEventListener('click',filterTask)
 
 function addTask(e){
 
@@ -39,6 +44,36 @@ function completeTask(e){
     else if(classList[1] == 'fa-trash'){
         item.parentElement.parentElement.remove();
     }
+}
+
+function filterTask(e){
+    const selectedOption = e.target.value;
+
+    const todos = [...taskWrapper.childNodes]
+    
+    todos.forEach((todo)=>{
+        switch (selectedOption) {
+            case "1":
+                todo.style.display = "flex";
+                break;
+            case "2":
+                if(todo.classList.contains("completed")){
+                    todo.style.display = "flex";
+                }else{
+                    todo.style.display = "none";
+                }
+                break;
+            case "3":
+                if(!todo.classList.contains("completed")){
+                    todo.style.display = "flex";
+                                      
+                }else{
+                    todo.style.display = "none";
+                }
+                break;
+        }
+    })
+    
 }
 
 
