@@ -7,7 +7,7 @@ const completeBtn = document.querySelector('.complete-btn');
 const dropdown = document.querySelector('#filter');
 
 addBtn.addEventListener('click',addTask);
-taskWrapper.addEventListener('click',completeTask)
+taskWrapper.addEventListener('click',checkAndRemove)
 dropdown.addEventListener('click',filterTask)
 document.addEventListener('DOMContentLoaded',getDataFromStorage)
 
@@ -33,7 +33,7 @@ function addTask(e){
     
 }
 
-function completeTask(e){
+function checkAndRemove(e){
 
     const classList = [...e.target.classList];
     const item = e.target;
@@ -42,7 +42,9 @@ function completeTask(e){
         item.parentElement.parentElement.classList.toggle('completed')
     }
     else if(classList[1] == 'fa-trash'){
-        item.parentElement.parentElement.remove();
+        const todo = item.parentElement.parentElement;
+        removeDataFromStorage(todo);
+        todo.remove()
     }
 }
 
@@ -108,12 +110,16 @@ function getDataFromStorage(){
         `;
         todoBox.innerHTML = newTask;
         taskWrapper.appendChild(todoBox);
-        saveDataToStorage(textbox.value);
-        textbox.value = "";
 
     })
 
 }
 
+function removeDataFromStorage(todo){
+    const savedTodos = localStorage.getItem('todos') ?
+    JSON.parse(localStorage.getItem('todos'))
+    : [];
 
-
+    const filteredTodos = savedTodos.filter( (t) => t != todo.children[0].innerText)
+    localStorage.setItem('todos' , JSON.stringify(filteredTodos));
+};
